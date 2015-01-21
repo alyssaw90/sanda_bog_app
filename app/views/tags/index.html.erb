@@ -18,7 +18,7 @@
           <% @tags.each do |tag| %>
             <tr>
               <td><%= link_to tag.name, tagc_path(tag.name) %></td>
-              <td><%= link_to 'Delete', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to "<button type='button' class='btn btn-primary'>Delete</button>".html_safe, tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
