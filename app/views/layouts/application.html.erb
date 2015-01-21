@@ -11,14 +11,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-   <!--  <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="/">Home</a></li>
-        <li role="presentation"><a href="/tags">Tags</a></li>
-        <li role="presentation"><a href="creatures/new">Add Creature</a></li>
-        <li role="presentation"><a href="tags/new">Add Tag</a></li>
-    </ul> -->
-  </div>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Creatures", creatures_path %></li>
+        <li><%= link_to "New Creature",new_creature_path %></li>
+        <li><%= link_to "Tags", tags_path%></li>
+        <li><%= link_to "New Tag", new_tag_path%></li>
+      </ul>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
   <%= yield %>
 
 </body>
