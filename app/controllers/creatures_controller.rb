@@ -41,6 +41,11 @@ class CreaturesController < ApplicationController
        @results = list.map do |photo|
        FlickRaw.url_s(photo)
      end
+
+    name = Creature.find(params[:id]).name
+    @response = RestClient.get 'http://www.reddit.com/search.json', {:params => {:q => name, :limit => 10}}
+    @response_object = JSON.parse(@response)
+    @reddit_posts = @response_object['data']['children']
   end
 
   def tag

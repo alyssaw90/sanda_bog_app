@@ -12,7 +12,14 @@
         <a href="<%=photo.remove('_s')%>" class="img-rounded"><%= image_tag photo %></a>
       <% end %>
       </div>
-
+      <br>
+      <div>
+      <p>Reddit Posts:</p>
+      <% @reddit_posts.each do |post|%>
+        <li><%= link_to post['data']['title'], "http://www.reddit.com#{post['data']['permalink']}"%></li>
+      <% end %>
+      </div>
+      <br>
       <p><b> Tags: </b>
       <% @creature.tags.each do |tag| %>
         <%= link_to tag.name, tagc_path(tag.name) %>

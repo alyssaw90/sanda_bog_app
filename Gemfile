@@ -44,6 +44,8 @@ gem 'spring',        group: :development
 
 gem 'bootstrap_form'
 
+gem 'rest-client'
+
 group :development, :test do
   gem 'sqlite3'
 end
