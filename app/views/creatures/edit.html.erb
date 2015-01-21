@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="jumbotron">
+
+      <h1>Edit: <%= @creature.name %></h1>
+
+      <p>Please give us more information about this creature.</p>
+
+      <%= render partial: 'partials/form' %>
+
+      <%= render partial: "partials/flash" %>
+
+      <p><%= link_to '&larr; <b> back </b>'.html_safe, creature_path %> </p>
+
+  </div>
+</div>

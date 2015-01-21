@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="jumbotron">
+      <%= bootstrap_form_for @tag do |f| %>
+        <h2><%= f.label "Add New Creature Tag"  %></h2>
+        <p><%= f.text_area :name , :placeholder => "Name" %></p>
+        <p><%= f.submit %></p>
+      <% end %>
+   </div>
+</div>

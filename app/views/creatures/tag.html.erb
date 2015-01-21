@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+
+    <h1>Creatures with  </h1>
+
+    <p>
+    <%= link_to "<button type='button' class='btn btn-primary'>Add More Creatures</button>".html_safe, new_creature_path %>
+    <p/>
+
+    <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><h4>Creatures Collected</h4>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @creatures.each do |creature| %>
+        <tr>
+          <td><h5><%= creature.name %></h5></td>
+          <td><h5><%= link_to "<button type='button' class='btn btn-primary'>More Info</button>".html_safe, creature %></h5></td>
+          <td><h5><%= link_to "<button type='button' class='btn btn-primary'>Edit</button>".html_safe, creature, method: :delete, data: { confirm: 'Are you sure?' } %></h5><td>
+        </tr>
+      <% end %>
+      <p><%= link_to '&larr; <b> back </b>'.html_safe, creatures_path %> </p>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
